@@ -51,7 +51,7 @@ app.get('/userdetails/', async (req, res) => {
 
 
 //post method
-app.post('/register-form', async (req, res) =>{
+app.post('/submit-form', async (req, res) =>{
     const Userdetails = req.body;
     const { 
         name,
@@ -66,8 +66,14 @@ app.post('/register-form', async (req, res) =>{
     res.send(result);
 })
 
+
+
+
+
 app.post('/login', async (req, res) => {
     const { name, email } = req.body;
+    
+    // Database lo user ni find cheyadaniki query
     const selectUserQuery = `
         SELECT * FROM user 
         WHERE name = '${name}' AND email = '${email}';
@@ -76,11 +82,17 @@ app.post('/login', async (req, res) => {
     const user = await db.get(selectUserQuery);
     
     if (user === undefined) {
+        // User lekapothe error message pampali
         res.status(401).send("Invalid name or email");
     } else {
+        // User unte success message pampali
         res.status(200).send("Login successful!");
     }
 });
+
+
+
+
 
 //Put method
 app.put('/Udate_userdetails/:user_id', async (req, res) =>{

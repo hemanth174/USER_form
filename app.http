@@ -7,7 +7,7 @@ GET http://localhost:3000/userdetails/
 Content-Type: application/json
 
 ### Post to Add User
-POST http://localhost:3000/submit-form
+POST http://localhost:3000/register-form
 Content-Type: application/json
 
 {

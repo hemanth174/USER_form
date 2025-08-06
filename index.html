@@ -42,6 +42,13 @@
     input:focus-visible{
       padding:15px;
     }
+    
+    .buttonvalue1{
+      border: 1px solid black;
+      border-radius: 20px;
+      display: flex;
+      justify-self:center;
+    }
     #buttonvalue{
       border: 1px solid black;
       border-radius: 20px;
@@ -85,16 +92,27 @@
   </div>
 </div>
     <div id = "section2">
-      <h1 class = "heading">LOGIN</h1>
-    <form id="loginForm">
-    <input class = "name" id = "name" type="text" name="name" placeholder="Your name Buddy" required><br>
-    <input class = "email" id = email type="email" name="email" placeholder="Your email Buddy" required><br>
-    <button  id = "buttonvalue1" type="submit">LOGIN here 🎉</button>
+     
 
-  </form>
-  <div class = "paragraph1">
-  <p>Didn't have account Register? <button  class = "button2" onclick="display('section1')">Register</button></p>
-  </div>
+  <div class="login-container">
+        <h1 class = "heading">Login</h1>
+        <form id="loginForm">
+            <div class="form-group">
+                <!-- <label for="name">Name:</label> -->
+                <input class = "name" type="text" id="name" name="name" placeholder="Your name Buddy" required><br>
+            </div>
+            <div class="form-group">
+                <!-- <label for="email">Email:</label> -->
+                <input class="email" type="email" id="email" name="email" placeholder="Your email Buddy" required>
+            </div>
+            <button class = "buttonvalue1" type="submit">LOGIN here 🎉</button><br>
+            <div class = "paragraph1">
+              <p>Didn't have account Register? <button  class = "button2" onclick="display('section1')">Register</button></p>
+                </div>
+            
+        </form>
+        <div id="message"></div>
+    </div>
     </div>
   <code id="responseMsg"></code>
 
