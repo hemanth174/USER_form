@@ -1,0 +1,48 @@
+GET http://localhost:3000/create-table/
+
+
+
+### Get Home Route
+GET http://localhost:3000/userdetails/
+Content-Type: application/json
+
+### Post to Add User
+POST http://localhost:3000/submit-form
+Content-Type: application/json
+
+{
+  "name": "ramu",
+  "email": "ramu@gmail.com"
+}
+
+
+
+### Post to Add User
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+  "name": "ramu",
+  "email": "ramu@gmail.com"
+}
+
+
+
+
+
+
+
+
+
+### Put to ubdate User
+PUT http://localhost:3000/Udate_userdetails/4
+Content-Type: application/json
+
+{
+  "name": "venu",
+  "email": "rama@gmail.com"
+}
+
+### Delete methos
+DELETE http://localhost:3000/DeleteUser/3
+
