@@ -54,44 +54,38 @@ app.get('/userdetails/', async (req, res) => {
 app.post('/submit-form', async (req, res) =>{
     const Userdetails = req.body;
     const { 
-        name,
-        email
+        
+        email,
+        password
         } = Userdetails;
     
     const Adduser = `
-    INSERT INTO user (name, email)
-    VALUES ('${name}', '${email}');
+    INSERT INTO user (email, password)
+    VALUES ('${email}', '${password}');
     `;
     const result = await db.run(Adduser);
     res.send(result);
 })
 
-
-
-
-
 app.post('/login', async (req, res) => {
-    const { name, email } = req.body;
+    const { password, email } = req.body;
     
     // Database lo user ni find cheyadaniki query
     const selectUserQuery = `
         SELECT * FROM user 
-        WHERE name = '${name}' AND email = '${email}';
+        WHERE password = '${password}' AND email = '${email}';
     `;
     
     const user = await db.get(selectUserQuery);
     
     if (user === undefined) {
         // User lekapothe error message pampali
-        res.status(401).send("Invalid name or email");
+        res.status(401).send("Invalid password or email");
     } else {
         // User unte success message pampali
         res.status(200).send("Login successful!");
     }
 });
-
-
-
 
 
 //Put method

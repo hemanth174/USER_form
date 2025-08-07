@@ -7,12 +7,12 @@ GET http://localhost:3000/userdetails/
 Content-Type: application/json
 
 ### Post to Add User
-POST http://localhost:3000/register-form
+POST http://localhost:3000/submit-form
 Content-Type: application/json
 
 {
-  "name": "ramu",
-  "email": "ramu@gmail.com"
+  "password": "hemanths",
+  "email": "hemanths@gmail.com"
 }
 
 
@@ -22,8 +22,8 @@ POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-  "name": "ramu",
-  "email": "ramu@gmail.com"
+  "password": "hemanth",
+  "email": "hemanth@gmail.com"
 }
 
 
@@ -44,5 +44,5 @@ Content-Type: application/json
 }
 
 ### Delete methos
-DELETE http://localhost:3000/DeleteUser/3
+DELETE http://localhost:3000/DeleteUser/5
 

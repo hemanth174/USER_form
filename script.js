@@ -1,7 +1,6 @@
  const form = document.getElementById('myForm');
 const responseMsg = document.getElementById('responseMsg');
 const buttonEl = document.getElementById("buttonvalue");
-const buttonEl1 = document.getElementById("buttonvalue1");
 const nameEl = document.getElementById('name');
 const emailEl = document.getElementById('email')
     form.addEventListener('submit', async (e) => {
@@ -30,6 +29,10 @@ const emailEl = document.getElementById('email')
       }
     });
 
+
+
+const loginForm = document.getElementById('loginForm');
+   
 document.getElementById('loginForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -46,47 +49,26 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
 
     const messageElement = document.getElementById('message');
     const responseText = await response.text();
+     if (name.name === ""){
+        responseMsg.textContent = "Requried";
+     }
+    
+});
+// setTimeout(() => {
+//             window.location.href = 'https://ai-voice-assisstant-ap4o.onrender.com';
+//         }, 3000); // 3000 milliseconds = 3 seconds
 
-    if (response.ok) {
-        messageElement.textContent = responseText;
-        messageElement.style.color = 'green';
-        
-        // **Ikkada redirect code add cheyyandi.**
-        // 3 seconds tarvata 'main.html' ki redirect avvadaniki.
-        setTimeout(() => {
-            window.location.href = 'https://ai-voice-assisstant-ap4o.onrender.com';
-        }, 3000); // 3000 milliseconds = 3 seconds
-    } else {
-        messageElement.textContent = responseText;
-        messageElement.style.color = 'red';
+//data needs to be in check--data.value--if value in data need to show some msg else need to pass
+
+
+
+    buttonEl.style.display = 'none';
+    buttonEl.addEventListener('click', function() {
+    if (nameEl.value === "" || emailEl.value === "") {
+        buttonEl.style.display = 'none'; 
+    }else{
+        buttonEl.style.display = 'block';
     }
 });
 
 
-    
-    buttonEl.style.display = 'none';
-
-  function checkInputs() {
-      if (nameEl.value !== "" && emailEl.value !== "") {
-          buttonEl.style.display = 'block';
-      } else {
-          buttonEl.style.display = 'none';
-      }
-  }
-
-  nameEl.addEventListener('input', checkInputs);
-  emailEl.addEventListener('input', checkInputs);
-
-
-//  buttonEl1.style.display = 'none';
-
-//   function checkInputs() {
-//       if (nameEl.value !== "" && emailEl.value !== "") {
-//           buttonEl1.style.display = 'block';
-//       } else {
-//           buttonEl1.style.display = 'none';
-//       }
-//   }
-
-//   nameEl.addEventListener('input', checkInputs);
-//   emailEl.addEventListener('input', checkInputs);
