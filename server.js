@@ -39,6 +39,13 @@ const InitializeDBandServer =  async () =>{
     }
 };
 InitializeDBandServer();
+// Serve static files from a "public" folder (adjust if needed)
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Root route
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 
 //GET method
