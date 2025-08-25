@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GIRI - Voice Assistant</title>
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/ffffff/microphone.png">
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body>
+      <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class = "img1">
+                    
+                </div>
+            </div>
+            <div class="nav-toggle" id="navToggle">
+                <div class="hamburger-icon-">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="62" height="62" fill="currentColor" class="bi bi-list hamburger-icon-svg" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+</svg>
+                </div>
+                </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="../USERFORM/proflie.html">Profile</a></li>
+                <button id="logoutBtn" style="display:none;">Logout</button>
+
+            </ul>
+        </nav>
+    </header>
+
+   
+
+    <div class="container">
+        <h1>GIRI Voice Assistant 💡</h1>
+        <p id="status-text">Click the button or press Ctrl+S to start</p>
+        
+        <button id="start-btn">
+            <img src="https://img.icons8.com/ios-filled/50/ffffff/microphone.png" alt="mic-icon"/>
+            <div class="orb-shape shape-1"></div>
+            <div class="orb-shape shape-2"></div>
+            <div class="orb-shape shape-3"></div>
+            <div class="orb-shape shape-4"></div>
+            <div class="orb-shape shape-5"></div>
+        </button>
+         
+        <p id="user-command"></p>
+        <p id="giri-response"></p>
+    </div>
+ <script>
+   document.addEventListener('DOMContentLoaded', function() {
+    const navToggle = document.getElementById('navToggle'); 
+    const navLinks = document.getElementById('navLinks');   
+    const navbar = document.querySelector('.navbar');       
+    const sidebarCloseBtn = document.getElementById('sidebarCloseBtn'); 
+
+    function toggleSidebar() {
+        navbar.classList.toggle('open');
+        navLinks.classList.toggle('open');
+    }
+    navToggle.addEventListener('click', toggleSidebar);
+    sidebarCloseBtn.addEventListener('click', toggleSidebar);
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (link.parentElement !== sidebarCloseBtn) {
+                toggleSidebar();
+            }
+        });
+    });
+});
+ </script>
+    <script src="../static/js/script.js"></script>
+</body>
+</html>

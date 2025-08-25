@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "flask": "^0.2.10",
+    "gunicorn": "^0.0.1-security"
+  }
+}

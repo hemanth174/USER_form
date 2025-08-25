@@ -1,0 +1,9 @@
+flask-session
+flask
+gunicorn
+wikipedia
+pyjokes
+datetime
+pytz
+holidays  # Import the holidays library
+youtube-search-python
